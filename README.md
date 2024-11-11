@@ -1,7 +1,7 @@
 # Overview
 1. TeraBox offers 1 TB free online storage
 2. I don't trust TeraBox, so I encrypt all my files client-side (before I upload)
-3. Their reliability on uploading large files is terrible, so we split them into 100 MB chunks
+3. Their reliability on uploading large files is terrible, so we split them into `100 MB` chunks
 4. They have an automatic backup feature for certain folders, so it retries on failure and automatically uploads new files or on file changes
 5. I've chosen `~/TeraBox` to be the working folder
 6. `~/TeraBox` is not backed up to TeraBox directly
@@ -13,12 +13,15 @@ I'm running on a MacBook Air M1, but I don't think that matters.  All of this sh
 
 # Command-Line Tools
 - zsh
-- gpg
+- [gpg](https://gnupg.org/): `brew install gpg`
 - zip
 - split
 - cat
 - sha256sum
 - cut
+
+# Other Tools
+- [dupeGuru](https://github.com/arsenetar/dupeguru/releases) to deduplicate files (with special photo comparison)
 
 # Tips
 - You can get perks by playing games in the Phone App which extend to Application installs, too, though I haven't found a way to play them on the desktop app
@@ -27,6 +30,12 @@ I'm running on a MacBook Air M1, but I don't think that matters.  All of this sh
     - It's pretty easy and I find it a fun game to play and it only takes 60 seconds per game
 - I installed the App before I had Premium features and am wondering if that had a big negative impact in certain ways.
 - I had a lot of failed uploads just uploading unencrypted zip files.  Was it getting nosy and failing to upload more reliably?  I don't know.  It was horrible until I started encrypting the files.  But maybe it was in a weird transition state between free and Ultimate (still free via playing the games).
+
+# Troubleshooting
+## Uploads habitually fail to upload after some time
+- Verify your computer isn't going to sleep, interrupting the upload
+    - Consider running `caffeinate` in another terminal window
+    - Apple > System Settings > Battery > Options... > Turn on `Prevent automatic sleeping on power adapter when the display is off`
 
 # Workflow Example
 - I inserted an external backup drive which mounted to `/Volumes/Primary SSD/`
